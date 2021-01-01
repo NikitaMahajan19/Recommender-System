@@ -1,0 +1,40 @@
+FAQ for IP2020 ML Project [22-06-2020 | 20:57]
+
+----------
+
+1. One event element implies the event name.
+   Event names are usually strings, as you would know.
+   Event names are extracted from communications, so have sentence style names.
+
+2. For each event, an employee's Domain and only one Type (Event1/Event2) should match.
+   A type match alone, is considered only for generalised events where no domain is provided.
+   A domain match alone, doesn't exist.
+
+3. You are only concerned with the given 183 employees, none else. 
+   Do not assume any extra feature outside of the problem statement.
+
+4. If an event doesn't match with any employee, keep its recommendation blank.
+
+5. An example is given here.
+
+Input Event 1 : "Get a System Administration certification from PurpleHat today."
+Input Event 2 : "Lockdown special courses on Ydemi. 22 hours left!"
+Input Event 3 : "CodeBoost codeathon is live now!"
+
+Classification -
+Event 1 -> Domain: Other (because Sys Admin)	Type: Certification
+Event 2 -> Domain: None (because not specified)	Type: Courses
+Event 3 -> Domain: Coding (because Codeathon)	Type: Hackathons
+
+Employees list (4 columns) -
+Column1		Column2	Column3		Column4
+Curtis Ortega	| IoT	| Internships	| Courses
+Andrew Cox	| Coding| Jobs		| Certifications
+Siah Araol	| Other	| Certifications| Expos
+Jotin Ai	| Coding| Hackathons	| Courses
+
+Output (2 columns) -
+Column1									Column2	
+Get a System Administration certification from PurpleHat today.	|	Siah Araol
+Lockdown special courses on Ydemi. 22 hours left!		|	Curtis Ortega, Jotin Ai
+CodeBoost codeathon is live now!				|	Jotin Ai
